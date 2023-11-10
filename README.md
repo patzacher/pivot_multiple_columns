@@ -14,16 +14,14 @@
 library(tidyverse)
 ```
 ## Import Data
-Both of the data sets here have been edited prior to importing. data_raw
-contains a lightly edited version of the original data set, in that it contains
-all the original data but only two (of six) sets of questions and responses.
-data_simple is a heavily edited version of the original data set only
-containing ResponseId and two sets of questions and responses (useful for
-troubleshooting the pivoting operation in the chunk below).
+`data` contains the variables `ResponseId` and two sets of questions and responses. 
+For example, Q1_1 contains the first question in the first group of questions
+seen by a participant, while Q2_3 is the third question in the second group of 
+questions seen by a participant. Responses are code the same way. For example, 
+A1_1 is the response to Q1_1, A2_2 to Q2_2, etc. 
 
 ```R
-data_raw <- read.csv("NLaw Student Data Choice Text Codes - edited.csv")
-data_simple <- read.csv("ts_data_subset.csv")
+data <- read.csv("data.csv")
 ```
 
 ## Pivot Wide-to-Long
@@ -54,7 +52,7 @@ the same for every participant. We remove the extraneous columns item and n,
 and finally, ungroup the data frame (as is best practice).
 
 ```R
-data_cleaned_simple <- data_raw %>%
+data_cleaned_simple <- data %>%
   pivot_longer(cols = matches("[A-Za-z][0-9]\\_[0-9]+"), # Select columns relating to the questions
                names_to = c(".value", "item"),
                names_sep = "_") %>% # How we know which items are related
