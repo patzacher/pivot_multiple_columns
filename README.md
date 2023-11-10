@@ -1,6 +1,4 @@
-# Project Title
-
-Brief project description.
+# Pivot Multiple Columns of a Data Frame
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -9,7 +7,7 @@ Brief project description.
 - [Pivot Wide-to-Long](#pivot-wide-to-long)
 
 ## Introduction
-Briefly describe the purpose and context of the project.
+
 
 ## Libraries
 ```R
