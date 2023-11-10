@@ -66,4 +66,4 @@ data_cleaned_simple <- data_raw %>%
          item_num = cumsum(n)/n) %>% # Add 
   select(-item, -n) %>% # Remove `item` and `n` columns
   ungroup()
-```R
+```
