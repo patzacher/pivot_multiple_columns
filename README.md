@@ -7,7 +7,7 @@
 - [Pivot Wide-to-Long](#pivot-wide-to-long)
 
 ## Introduction
-
+This code was used to order survey data, where each respondent was presented with two scenarios each containing 11 questions. The order of the scenarios remained consistent for each participant (e.g., scenario 1 then scenario 2), but the questions within each group were randomized. The goal was to unscramble the data so that questions and the associated participant responses were in a consistent order (i.e., Scenario 1: Q1_1, Q1_2, Q1_3, etc.).  
 
 ## Libraries
 ```R
@@ -15,9 +15,9 @@ library(tidyverse)
 ```
 ## Import Data
 `data` contains the variables `ResponseId` and two sets of questions and responses. 
-For example, Q1_1 contains the first question in the first group of questions
-seen by a participant, while Q2_3 is the third question in the second group of 
-questions seen by a participant. Responses are code the same way. For example, 
+For example, Q1_1 contains the first question in the scenario
+seen by a participant, while Q2_3 is the third question in the second scenario 
+seen by a participant. Responses are code the same way. For example, 
 A1_1 is the response to Q1_1, A2_2 to Q2_2, etc. 
 
 ```R
